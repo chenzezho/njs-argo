@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS ENERGY - Clean Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --teal-primary: #00A389; /* Slightly brighter teal for modern feel */
+            --teal-dark: #007D6E;
+            --bg-gray: #F7F9FC; /* Very light cool gray */
+            --text-dark: #1E2749; /* Deep navy/charcoal */
+            --accent-light: #CFE8E5;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Nav Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: white;
+            border-bottom: 2px solid var(--accent-light);
+        }
+        
+        .brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+        
+        .brand span { color: var(--teal-primary); }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--teal-primary);
+        }
+
+        /* Hero Split Design */
+        .hero-split {
+            display: flex;
+            min-height: 90vh;
+        }
+        
+        .hero-text {
+            flex: 1.2; /* Text slightly wider */
+            padding: 5rem 6%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--bg-gray);
+        }
+        
+        .hero-text h1 {
+            font-size: 4rem; /* Larger font size */
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight { color: var(--teal-primary); }
+        
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #607d8b;
+            margin-bottom: 3rem;
+            max-width: 550px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            /* Stable image source for wind turbines / renewable energy */
+            background-image: url('https://source.unsplash.com/1200x1800/?wind-turbine,solar-farm,energy');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Call to Action Button */
+        .btn-tech {
+            padding: 1.1rem 3rem;
+            background: var(--teal-primary);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+        
+        .btn-tech:hover {
+            background: var(--teal-dark);
+            box-shadow: 0 8px 20px rgba(0, 163, 137, 0.4);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: var(--teal-primary);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .stat-item h2 {
+            font-size: 3rem;
+            color: white;
+            margin: 0;
+            font-weight: 800;
+        }
+        
+        .stat-item p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Technology Section */
+        .tech-section {
+            padding: 5rem 5%;
+            text-align: center;
+            background: white;
+        }
+        
+        .tech-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+        
+        .tech-section h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--teal-primary);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            text-align: left;
+        }
+        
+        .tech-card {
+            background: var(--bg-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .tech-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--teal-primary);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: var(--teal-dark);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        
+        .card-content p {
+            font-size: 0.95rem;
+            color: #607d8b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--bg-gray);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--teal-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        @media (max-width: 960px) {
+            .hero-split { flex-direction: column; }
+            .hero-image { height: 50vh; }
+            .hero-text { padding: 3rem; }
+            .hero-text h1 { font-size: 3rem; }
+            .stats-bar { flex-direction: column; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">NEXUS<span>ENERGY</span></div>
+        <div>
+            <a href="#solutions" class="nav-link">Solutions</a>
+            <a href="#technology" class="nav-link">Technology</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-split">
+        <div class="hero-text">
+            <h1 class="animate__animated animate__fadeInLeft">Driving the <span class="highlight">Clean Energy</span> Revolution</h1>
+            <p>Utilizing state-of-the-art renewable technology to redefine power generation. Efficient, smart, and zero-carbon solutions for tomorrow's world.</p>
+            <a href="#solutions" class="btn-tech">Explore Solutions</a>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h2>98%</h2>
+            <p>Carbon Reduction</p>
+        </div>
+        <div class="stat-item">
+            <h2>$50M+</h2>
+            <p>Investment Secured</p>
+        </div>
+        <div class="stat-item">
+            <h2>24/7</h2>
+            <p>Smart Grid Monitoring</p>
+        </div>
+    </div>
+
+    <section id="technology" class="tech-section">
+        <h2>Our Core Technologies</h2>
+        <div class="tech-grid">
+            
+            <div class="tech-card">
+                <img src="https://source.unsplash.com/600x400/?solar-panel,photovoltaic" alt="Solar Panel Array">
+                <div class="card-content">
+                    <h3>Advanced Photovoltaics</h3>
+                    <p>Harnessing maximum energy conversion efficiency with next-generation solar cell materials and modular integration.</p>
+                </div>
+            </div>
+            
+            <div class="tech-card">
+                <img src="https://source.unsplash.com/600x400/?offshore-wind-turbine,wind-power" alt="Offshore Wind Turbines">
+                <div class="card-content">
+                    <h3>Smart Wind Systems</h3>
+                    <p>Utilizing AI-driven pitch control and predictive maintenance to optimize output in diverse weather conditions.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <img src="https://source.unsplash.com/600x400/?energy-storage,lithium-ion-battery" alt="Large Energy Storage Battery">
+                <div class="card-content">
+                    <h3>Modular Energy Storage</h3>
+                    <p>Scalable battery solutions for grid stability and reliable power delivery when renewable sources fluctuate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+[Image of the structure of a perovskite solar cell]
+
+    
+    <footer>
+        <p>&copy; 2023 NEXUS Energy. <a href="#">Privacy Policy</a> | All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
